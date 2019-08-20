@@ -14,15 +14,15 @@ public class ToDo {
     private long id;
 
     @NotNull
-    @Size(min = 3)
+    @Size(min = 3, message = "Type in at least 3 characters.")
     private String taskName;
 
     @NotNull
-    @Size(min = 3)
+    @Size(min = 3, message = "Due Date should be at least 3 characters long.")
     private String dueDate;
 
     @NotNull
-    @Size(min = 3, max = 10)
+    @Size(min = 3, max = 10, message = "Low, mid, or high (between 3 and 10 chars.)")
     private String priority;
 
     public long getId() {

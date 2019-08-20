@@ -7,9 +7,9 @@
 <body>
 <form action="#"
       th:action="@{/process}"
-      th:object="${task}"
+      th:object="${toDo}"
       method="post">
-    <input type=hidden th:field="*{id}"/>
+    <input type="hidden" th:field="*{id}"/>
     Task :<input type="text" th:field="*{taskName}"/>
     <span th:if="${#fields.hasErrors('taskName')}"
           th:errors="*{taskName}"></span><br/>

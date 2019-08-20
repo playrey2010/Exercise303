@@ -25,7 +25,7 @@ public class HomeController {
 
     @GetMapping("/add")
     public String taskForm(Model model) {
-        model.addAttribute ( "task", new ToDo () );
+        model.addAttribute ( "toDo", new ToDo () );
         return "taskform";
     }
 
@@ -41,13 +41,13 @@ public class HomeController {
 
     @RequestMapping("/detail/{id}")
     public String showTask(@PathVariable("id") long id, Model model){
-        model.addAttribute ( "task", taskRepository.findById ( id ).get () );
+        model.addAttribute ( "toDo", taskRepository.findById ( id ).get () );
         return "show";
     }
 
     @RequestMapping("/update/{id}")
     public String updateTask(@PathVariable("id") long id, Model model) {
-        model.addAttribute ( "task", taskRepository.findById ( id ).get () );
+        model.addAttribute ( "toDo", taskRepository.findById ( id ).get () );
         return "taskform";
     }
 
